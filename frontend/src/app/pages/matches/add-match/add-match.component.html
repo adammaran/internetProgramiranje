@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row" style="margin-top: 100px;">
+        <div class="col">
+            <label>Domacin</label>
+            <select [(ngModel)]="hostTeam" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option *ngFor="let team of teams" [value]="team.name">{{team.name}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <label>Poeni</label>
+            <input type="number" name="homePoints" id="homePoints" [(ngModel)]="hostPoints">
+        </div>
+        <div class="col">
+            <label>Poeni</label>
+            <input type="number" name="awayPoints" id="awayPoints" [(ngModel)]="guestPoints">
+        </div>
+        <div class="col">
+            <label>Gost</label>
+            <select [(ngModel)]="guestTeam" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option *ngFor="let team of teams" [value]="team.name">{{team.name}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <label>Vreme</label>
+            <input type="datetime-local" [(ngModel)]="time"> 
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" (click)="addMatch()">Sacuvaj utakmicu</button>
+        </div>
+    </div>
+</div>

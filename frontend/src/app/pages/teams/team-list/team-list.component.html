@@ -1,0 +1,11 @@
+<div class="container mb-5 mt-4" *ngIf="isAuthenticated()">
+    <app-add-team (newTeam)="getTeams()"></app-add-team>
+</div>
+<div class="input-group mb-3" *ngFor="let team of teams" style="margin-top: 50px;">
+    <input type="text" class="form-control" [(ngModel)]="team.name" [disabled]="!isAuthenticated()">
+    <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="button" (click)="editTeam(team)" *ngIf="isAuthenticated()">Izmeni</button>
+        <button class="btn btn-outline-danger" type="button" (click)="deleteTeam(team)" *ngIf="isAuthenticated()">Obriši</button>
+    </div>
+</div>
+  

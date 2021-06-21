@@ -1,0 +1,25 @@
+<div class="row pt-5">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Prijava</h3>
+          <div class="card-body">
+            <form class="form">
+              <div class="form-group">
+                <label for="">Email</label>
+                <input [(ngModel)]="loginUserData.email" name="email" type="email" [ngClass]="invalidCredentials" class="form-control rounded-0">
+              </div>
+              <div class="form-group">
+                <label for="">Lozinka</label>
+                <input [(ngModel)]="loginUserData.password" name="password" type="password" [ngClass]="invalidCredentials" class="form-control rounded-0">
+                <p *ngIf="invalidCredentials !== ''">{{ credentialsError }}</p>
+              </div>
+              <button (click)="loginUser()" type="button" class="btn btn-success float-right">Uloguj se</button>
+              <p class="mb-0">Nemaš nalog? <a routerLink="/register">Registruj se!</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

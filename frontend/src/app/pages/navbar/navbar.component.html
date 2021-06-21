@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/" (click)="toggleNavbar()">
+      NBA evidencija
+    </a>
+  
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/matches" routerLinkActive="active" (click)="toggleNavbar()">Utakmice</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/teams" routerLinkActive="active" (click)="toggleNavbar()">Timovi</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile" routerLinkActive="active" (click)="toggleNavbar()">Profil</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <a class="nav-link" *ngIf="!userLoggedIn()" routerLink="/login" routerLinkActive="active" (click)="toggleNavbar()">Uloguj se</a>
+        <a class="nav-link" *ngIf="!userLoggedIn()" routerLink="/register" routerLinkActive="active" (click)="toggleNavbar()">Registracija</a>
+        <a class="nav-link" *ngIf="userLoggedIn()" style="cursor:pointer" (click)="logoutUser()" (click)="toggleNavbar()">Izloguj se</a>
+      </ul>
+    </div>
+  </nav>
+  
