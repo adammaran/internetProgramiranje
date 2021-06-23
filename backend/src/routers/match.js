@@ -5,9 +5,7 @@ const Match = require('../models/match');
 const router = new express.Router();
 
 router.post('/match/add', auth, async (req, res) => {   
-    console.log(req.body); 
     const match = new Match(req.body);
-    console.log(match);
     try {
         await match.save();
         res.status(201).send(match);
